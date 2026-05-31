@@ -100,19 +100,43 @@ ol {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-weight: 750;
   letter-spacing: -0.03em;
 }
 
-.brand-mark {
-  display: inline-grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: 50%;
-  background: #111;
-  color: #fff;
+.brand {
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  display: block;
+  width: 52px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  font-size: 1.08rem;
   font-weight: 800;
+  line-height: 1;
+}
+
+.brand-tagline {
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.footer-brand {
+  font-weight: 750;
 }
 
 .site-nav {
@@ -512,8 +536,12 @@ ol {
     width: min(calc(100% - 28px), var(--max));
   }
 
-  .brand-text {
-    font-size: 1rem;
+  .brand-icon {
+    width: 44px;
+  }
+
+  .brand-tagline {
+    display: none;
   }
 
   .button {
