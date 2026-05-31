@@ -10,11 +10,16 @@
 <body>
 <header class="site-header">
   <div class="container nav-wrap">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="NAI Systems home">
       <span class="brand-mark">N</span>
       <span class="brand-text">NAI Systems</span>
     </a>
-    <nav class="site-nav">
+
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
@@ -57,7 +62,7 @@
         <p>From business automation to professional websites and energy optimisation, we deliver solutions that improve real-world workflows.</p>
       </div>
 
-      <div class="card-grid three">
+      <div class="card-grid home-services-grid">
         <article class="card">
           <h3>AI Workflow Automation</h3>
           <p>Reduce repetitive admin, improve decision-making, and streamline your business operations.</p>
@@ -104,5 +109,12 @@
     <span>© 2026 NAI Systems</span>
   </div>
 </footer>
+<script>
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.site-header')) {
+      document.body.classList.remove('nav-open');
+    }
+  });
+</script>
 </body>
 </html>

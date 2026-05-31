@@ -33,6 +33,12 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
 p {
   margin: 0 0 1rem;
   color: var(--muted);
@@ -274,6 +280,10 @@ ol {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.home-services-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card {
   padding: 28px;
 }
@@ -393,6 +403,20 @@ ol {
   font-weight: 700;
 }
 
+.contact-list a,
+.footer-links a {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible,
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--text);
+}
+
 .site-footer {
   padding: 44px 0 24px;
   border-top: 1px solid var(--line);
@@ -458,6 +482,10 @@ ol {
   }
 
   .card-grid.three {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services-grid {
     grid-template-columns: 1fr;
   }
 
