@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | NAI Systems</title>
+  <meta name="description" content="Practical software, AI, automation, website and energy optimisation systems currently in development by NAI Systems.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="NAI Systems home">
+      <span class="brand-mark">N</span>
+      <span class="brand-text">NAI Systems</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">Projects</p>
+    <h1>Practical systems currently in development.</h1>
+    <p>NAI Systems works on software, automation, website and AI projects that solve real operational problems. Our focus is on useful systems that can be tested, improved and expanded over time.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container project-grid">
+    <article class="project-card">
+      <span class="tag">Custom platform</span>
+      <h2>PVI Inspection and Compliance Platform</h2>
+      <p>A custom inspection and compliance platform developed for Pressure Vessel Inspections, supporting inspection workflows, plant records, client access, document handling, photo evidence and operational tracking.</p>
+      <ul>
+        <li>Inspection workflow management</li>
+        <li>Plant and equipment records</li>
+        <li>Client portal planning</li>
+        <li>Photo evidence workflows</li>
+        <li>Corrective action tracking</li>
+      </ul>
+    </article>
+
+    <article class="project-card">
+      <span class="tag">Energy optimisation</span>
+      <h2>NAI Energy Optimisation</h2>
+      <p>A smart energy optimisation system being developed around live electricity pricing, solar, batteries, electric vehicles and site load management.</p>
+      <ul>
+        <li>Live electricity price response</li>
+        <li>Battery charging and holding logic</li>
+        <li>EV charging coordination</li>
+        <li>Dashboard and plan visibility</li>
+        <li>Manual overrides and safety controls</li>
+      </ul>
+    </article>
+
+    <article class="project-card">
+      <span class="tag">AI systems</span>
+      <h2>AI Workflow and Assistant Systems</h2>
+      <p>AI-assisted tools and workflows that help reduce manual administration, improve decision-making and support business operations.</p>
+      <ul>
+        <li>AI-assisted document drafting</li>
+        <li>Workflow automation</li>
+        <li>Internal assistant systems</li>
+        <li>Business process support</li>
+        <li>Productised assistant concepts</li>
+      </ul>
+    </article>
+
+    <article class="project-card">
+      <span class="tag">Web and dashboards</span>
+      <h2>Websites and Business Dashboards</h2>
+      <p>Professional websites, dashboards and reporting tools designed to provide better visibility across business operations, tasks, systems and opportunities.</p>
+      <ul>
+        <li>Business website rebuilds</li>
+        <li>Operational visibility</li>
+        <li>Workload tracking</li>
+        <li>Management reporting</li>
+        <li>Data-driven planning</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section muted">
+  <div class="container narrow">
+    <p class="eyebrow">Development approach</p>
+    <h2>Useful early, improved carefully.</h2>
+    <p>Every project starts with a real problem, a clear workflow and a practical outcome. We aim to build systems that are useful early, then improve them through real-world testing and feedback.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html">NAI Systems</a>
+      <p>Practical AI, automation and software systems.</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:contact@naisystems.online">contact@naisystems.online</a>
+      <a href="tel:+61402310599">+61 402 310 599</a>
+      <a href="https://wa.me/61402310599">WhatsApp</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 NAI Systems.</span>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.site-header')) {
+      document.body.classList.remove('nav-open');
+    }
+  });
+</script>
+</body>
+</html>
