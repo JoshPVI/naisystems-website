@@ -6,7 +6,13 @@
   --muted: #5f6368;
   --soft: #f5f5f3;
   --line: #e5e5e0;
-  --panel: #151515;
+  --accent: #1468e8;
+  --accent-dark: #0c4da8;
+  --accent-soft: #eef5ff;
+  --teal: #079f9b;
+  --teal-soft: #eafaf8;
+  --violet: #7356d9;
+  --panel: #102d58;
   --panel-text: #f5f5f3;
   --max: 1120px;
   --radius: 22px;
@@ -35,7 +41,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--text);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -133,9 +139,20 @@ ol {
 }
 
 .site-nav a:hover,
-.site-nav .nav-cta {
+.site-nav a:focus-visible {
   color: var(--text);
   background: var(--soft);
+}
+
+.site-nav .nav-cta {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+.site-nav a[aria-current="page"] {
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 5px 16px rgba(20, 104, 232, 0.2);
 }
 
 .nav-toggle {
@@ -157,6 +174,9 @@ ol {
 
 .hero {
   padding: 92px 0 74px;
+  background:
+    radial-gradient(circle at 82% 14%, rgba(7, 159, 155, 0.14), transparent 24rem),
+    radial-gradient(circle at 12% 18%, rgba(20, 104, 232, 0.12), transparent 28rem);
 }
 
 .hero-grid {
@@ -173,7 +193,7 @@ ol {
 
 .eyebrow {
   margin-bottom: 1rem;
-  color: var(--text);
+  color: var(--accent-dark);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -200,14 +220,19 @@ ol {
 }
 
 .button.primary {
-  background: var(--text);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #fff;
-  border-color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(20, 104, 232, 0.18);
 }
 
 .button.secondary {
   background: #fff;
   color: var(--text);
+}
+
+.button:hover {
+  transform: translateY(-1px);
 }
 
 .hero-panel,
@@ -221,8 +246,9 @@ ol {
 
 .hero-panel {
   padding: 28px;
-  background: var(--panel);
+  background: linear-gradient(145deg, var(--panel), #114c76 62%, #087f82);
   color: var(--panel-text);
+  box-shadow: 0 20px 50px rgba(16, 45, 88, 0.18);
 }
 
 .panel-label,
@@ -267,7 +293,7 @@ ol {
 }
 
 .section.muted {
-  background: var(--soft);
+  background: linear-gradient(135deg, var(--accent-soft), var(--teal-soft));
 }
 
 .section-heading {
@@ -290,6 +316,16 @@ ol {
 
 .card {
   padding: 28px;
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 10px 28px rgba(16, 45, 88, 0.05);
+}
+
+.card:nth-child(2n) {
+  border-top-color: var(--teal);
+}
+
+.card:nth-child(3n) {
+  border-top-color: var(--violet);
 }
 
 .card p {
@@ -310,8 +346,9 @@ ol {
 .cta-box {
   padding: 54px;
   border-radius: calc(var(--radius) + 10px);
-  background: var(--panel);
+  background: linear-gradient(135deg, var(--panel), #114c76 62%, #087f82);
   color: var(--panel-text);
+  box-shadow: 0 20px 50px rgba(16, 45, 88, 0.16);
 }
 
 .cta-box p {
@@ -329,6 +366,9 @@ ol {
 .page-hero {
   padding: 86px 0 56px;
   border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(7, 159, 155, 0.13), transparent 22rem),
+    linear-gradient(135deg, var(--accent-soft), #fff 68%);
 }
 
 .page-hero p {
@@ -373,13 +413,15 @@ ol {
 .project-card,
 .contact-card {
   padding: 32px;
+  box-shadow: 0 10px 28px rgba(16, 45, 88, 0.05);
 }
 
 .project-card .tag {
   padding: 7px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--muted);
+  color: var(--accent-dark);
+  background: var(--accent-soft);
   opacity: 1;
 }
 
@@ -419,6 +461,20 @@ ol {
 .footer-links a:hover,
 .footer-links a:focus-visible {
   color: var(--text);
+}
+
+.project-card:nth-child(2n) .tag {
+  color: #08706e;
+  background: var(--teal-soft);
+}
+
+.contact-card:first-child {
+  border-top: 3px solid var(--accent);
+}
+
+.contact-card:last-child {
+  border-top: 3px solid var(--teal);
+  background: linear-gradient(145deg, #fff, var(--teal-soft));
 }
 
 .site-footer {
