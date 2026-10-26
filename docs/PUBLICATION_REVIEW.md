@@ -1,0 +1,58 @@
+# Wake Downloads — publication review
+
+Prepared 27 October 2026. **Josh explicitly approved publication through GitHub → Vercel on 27 October 2026. Publication and live verification are now authorized.**
+
+## Production destination verified
+
+- Host: Vercel; live HTTP response identifies `Server: Vercel`.
+- Team: Josh Pascoe's projects (`josh-pascoe-s-projects`, `team_6VaYnXYFKMA0j5jijx1OrHot`).
+- Project: `naisystems-website` (`prj_MRw3Gf3ai4afAe6IcTzQCVWuAgyk`).
+- Production domain: `https://www.naisystems.online`; `naisystems.online` redirects there. Both domains are verified on this project.
+- Current production deployment: `dpl_5wr3WhuYbTniy5JDVA51skgq59MH`, READY, source `git`, branch `main`, commit `820a5c0e31f72f1b9032f7c543491755ac536aca`.
+- Repository: `JoshPVI/naisystems-website`, public, default branch `main`. Its source matches this checkout's current HEAD.
+
+## File-size findings and publication route
+
+| Installer | Bytes | MiB | GitHub 100 MiB per-file limit |
+| --- | ---: | ---: | --- |
+| Windows Agent 0.4.1 | 58,609,366 | 55.89 | Within limit |
+| Android beta 1.5.0 / code 5 | 97,019,642 | 92.53 | Within limit |
+
+Both are below 100,000,000 bytes as well. Together they are 155,629,008 bytes. The prepared public site totals **157,218,377 bytes in 14 files**.
+
+Use the existing **Git-based Vercel publication route**. [GitHub's file limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github) permit both files in regular Git, with warnings above 50 MiB. Browser uploads are limited to 25 MiB, so do not upload these through GitHub's web editor. No Git LFS is needed for these versions.
+
+[Vercel's upload limits](https://vercel.com/docs/limits#static-file-uploads) explicitly apply to CLI source uploads: 100 MB on Hobby and 1 GB on Pro. The complete site exceeds the Hobby CLI limit; do not use a direct CLI upload as the approved route. The current deployment's source is Git, which uses repository import instead of that CLI upload path. No documented size blocker was found for these files on that route. This is a documented compatibility assessment, not a claim that a new Vercel deployment or live installer transfer has already passed.
+
+The connector's team response omits the exact billing plan. Its rolling-release eligibility read says `plan_not_supported` and suggests Pro/Enterprise; this is not proof of an exact plan name. Browser account inspection requires sign-in. No plan upgrade, billing change or credentials retrieval was attempted. The chosen Git route does not rely on assuming Pro.
+
+Sources checked: [Vercel Git deployment behavior](https://vercel.com/docs/git), [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json).
+
+## Prepared local publication inputs
+
+- `vercel.json`: run `node scripts/prepare-release.cjs`, publish only `dist/`; serve the two versioned downloads with attachment filenames, appropriate MIME types, `nosniff` and immutable caching.
+- `scripts/prepare-release.cjs`: verifies installer byte counts/hashes and page release details/notices, checks local links and inline script syntax, then copies only the 14 approved public files into `dist/`. No upload or deployment command exists in the script.
+- `release/wake-installers.json`: exact installer identities, sizes and SHA-256 values.
+- `.release/publication-manifest.json`: SHA-256 for every public file and the three build inputs. Manifest SHA-256: `35D289B1B8A22AA5FA117A20347788E2D511098BD5E281FF6614E5E50FE5944B`.
+- `dist/` and `.release/` are generated/ignored. Internal docs, build scripts, Git metadata and local hosting configuration are absent from the public output.
+
+Pre-push verification reconciled only Git newline normalization in five HTML files (10 bytes total). The manifest above records Git's exact bytes; page content and both immutable installer hashes are unchanged from the reviewed release.
+
+The Windows unsigned-beta warning, Android beta label, pending physical-device testing, unresolved Hibernate-to-Wake notice and private cloud-invitation guidance are retained. No live codes, credentials or recovery files are part of the output.
+
+## Exact publication step — only after explicit approval
+
+1. Re-run `node scripts/prepare-release.cjs`. Confirm the manifest SHA-256 still matches the reviewed value; if any public/build input changed, review the new manifest before release.
+2. Commit the approved site changes, both installer files, `.gitignore`, `vercel.json`, `scripts/prepare-release.cjs`, `release/wake-installers.json` and documentation. Do not commit `dist/`, `.release/` or `.vercel/`. Josh's explicit publication approval authorizes the necessary commit/push for this release; the workspace's default Git restriction still applies outside this approved release.
+3. **The approved push to `main` is the production publication trigger.** Vercel's standard Git integration builds the production branch and updates its assigned domains. No separate Deploy click should be assumed to protect against publication after a push.
+4. Inspect that new deployment under the verified team/project. Require READY, the exact new approved commit, successful `prepare-release.cjs` output and the expected domains. A build error must leave the prior deployment live; stop and diagnose instead of changing links or omitting the binaries to force success.
+5. Verify `https://www.naisystems.online/downloads.html`, site navigation and beta/testing notices. Download both installers in full from the production domain; compare byte counts and SHA-256 against the manifest. Confirm attachment filename and MIME type. Verify internal files such as `/docs/CURRENT_STATUS.md` and `/scripts/prepare-release.cjs` are not served.
+6. Record the new deployment ID, commit, verification results and date in CURRENT_STATUS.md. Production transfer/bandwidth usage should be observed during the beta; no usage-based billing or plan change is authorized here.
+
+## Rollback
+
+If the released page or installer delivery fails verification, restore the previously verified production deployment `dpl_5wr3WhuYbTniy5JDVA51skgq59MH` through Vercel's rollback/promotion controls after confirming it is still the intended baseline. Do not rebuild the old release or replace bytes under immutable installer filenames. Vercel rollback can disable automatic domain assignment for subsequent pushes; explicitly inspect assignment state before resuming releases. No rollback, promotion or remote configuration action has been taken.
+
+## Verification limits
+
+Local preparation passes with 14 files and 157,218,377 bytes, both approved installer hashes, retained notices and no internal files in the public output. The used configuration properties validate against the corresponding definitions in Vercel's official JSON schema. Earlier local HTTP and browser checks passed for the download page and both installers. Vercel's new build and production downloads remain untested until publication is explicitly approved. Android physical-device testing remains pending independently of package verification.

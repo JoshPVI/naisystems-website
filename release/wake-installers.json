@@ -1,0 +1,21 @@
+{
+  "installers": [
+    {
+      "file": "downloads/Wake-Agent-0.4.1-win-x64.zip",
+      "version": "0.4.1",
+      "bytes": 58609366,
+      "sha256": "cf7acfa1e5f1faed2a4a2f2eac73c65bfdf654e9aed36ecd1287e9583a963542",
+      "channel": "unsigned Windows beta"
+    },
+    {
+      "file": "downloads/Wake-1.5.0-android-build-5.apk",
+      "package": "au.com.naisystems.wake",
+      "version": "1.5.0",
+      "versionCode": 5,
+      "bytes": 97019642,
+      "sha256": "ee7df5551fb9b6c4688cedb8ee010e86dd6c83e49a8b63e39b53fe17658b2c29",
+      "channel": "Android beta",
+      "physicalDeviceTesting": "pending"
+    }
+  ]
+}
