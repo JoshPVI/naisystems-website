@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wake Downloads | NAI Systems</title>
-  <meta name="description" content="Get Wake by NAI Systems: Windows Agent beta downloads, Android beta availability, installation help and known limitations.">
+  <meta name="description" content="Wake Nov build 002: internal Windows and Android beta downloads, provisioned iPhone installation, setup help and known limitations.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:title" content="Wake Downloads | NAI Systems">
-  <meta property="og:description" content="Windows Agent and Android beta downloads, setup help and release information for Wake.">
+  <meta property="og:description" content="Wake Nov build 002: Windows and Android internal betas, provisioned iPhone installation and setup help.">
   <meta property="og:image" content="https://www.naisystems.online/assets/nai-social-preview-1200x630.png">
   <meta property="og:url" content="https://www.naisystems.online/downloads.html">
   <meta property="og:type" content="website">
@@ -36,19 +36,19 @@
   <section class="wake-hero">
     <div class="container wake-hero-layout">
       <div>
-        <p class="eyebrow">Downloads · Beta</p>
+        <p class="eyebrow">Downloads · Internal beta</p>
         <div class="wake-lockup">
           <img src="assets/wake-dawn.svg" width="80" height="80" alt="">
-          <div><h1>Wake</h1><p>by NAI Systems</p></div>
+          <h1>Wake</h1>
         </div>
         <p class="wake-intro">Your computers. Ready when you are.</p>
-        <p>Wake computers from your phone with Wake-on-LAN. Add the optional Windows Agent for approved local power controls and status.</p>
+        <p>Wake computers from your phone with Wake-on-LAN. Internet wake depends on router/ISP configuration. This beta adds local power controls and encrypted internet status/history; internet power commands are not implemented.</p>
         <a class="text-link" href="#installation">Installation help <span aria-hidden="true">↓</span></a>
       </div>
       <aside class="wake-beta-note" aria-label="Beta release notice">
-        <span class="release-badge">Early access</span>
+        <span class="release-badge">Nov build 002</span>
         <h2>For beta testers</h2>
-        <p>These are test releases. Windows packages are unsigned; Android handset validation is pending. Hibernate-to-Wake remains unresolved.</p>
+        <p>Internal test builds for beta testers; public-release clearance has not been granted. Windows packages are unsigned. Mobile/device acceptance remains pending, including Android handset validation. Hibernate-to-Wake remains unresolved.</p>
         <p>Basic local Wake needs no agent, account or cloud invitation. Compatible hardware and Wake-on-LAN setup are required.</p>
       </aside>
     </div>
@@ -59,7 +59,7 @@
       <div class="section-heading">
         <p class="eyebrow">Choose your platform</p>
         <h2 id="downloads-heading">Get Wake</h2>
-        <p>Release information checked on <time datetime="2026-10-27">27 October 2026</time>.</p>
+        <p><strong>Nov build 002</strong> · Release information checked on <time datetime="2026-11-03">3 November 2026</time>.</p>
       </div>
       <div class="download-grid">
         <article class="download-card" aria-labelledby="windows-heading">
@@ -67,15 +67,15 @@
           <h3 id="windows-heading">Windows Agent</h3>
           <p>Optional companion for phone pairing, local power controls and computer status. Runs while you are signed in to Windows.</p>
           <dl class="release-details">
-            <div><dt>Version</dt><dd>0.4.1</dd></div>
+            <div><dt>Version</dt><dd>0.4.4</dd></div>
             <div><dt>Platform</dt><dd>Windows x64</dd></div>
-            <div><dt>Package</dt><dd>ZIP · 58,609,366 bytes</dd></div>
+            <div><dt>Package</dt><dd>ZIP · 58,612,934 bytes</dd></div>
           </dl>
-          <a class="button primary" href="downloads/Wake-Agent-0.4.1-win-x64.zip" download>Download Windows Agent <span class="visually-hidden">0.4.1 ZIP</span></a>
+          <a class="button primary" href="downloads/Wake-Agent-0.4.4-win-x64.zip" download>Download Windows Agent <span class="visually-hidden">0.4.4 ZIP, Nov build 002</span></a>
           <a class="text-link" href="#windows-install">Windows installation steps</a>
           <details class="checksum">
             <summary>Verify download (SHA-256)</summary>
-            <code>cf7acfa1e5f1faed2a4a2f2eac73c65bfdf654e9aed36ecd1287e9583a963542</code>
+            <code>0e2e7de649aa3a0bc2e8783c5e3c0650c802fe42e29c022da38c530f87d3ed17</code>
           </details>
         </article>
         <article class="download-card" aria-labelledby="android-heading">
@@ -83,15 +83,31 @@
           <h3 id="android-heading">Wake for Android</h3>
           <p>Wake-on-LAN, computer discovery and Windows Agent pairing in the shared Wake interface.</p>
           <dl class="release-details">
-            <div><dt>Version</dt><dd>1.5.0 · version code 5</dd></div>
+            <div><dt>Version</dt><dd>1.5.2 · version code 7</dd></div>
             <div><dt>Channel</dt><dd>Android beta · APK</dd></div>
-            <div><dt>Package</dt><dd>APK · 97,019,642 bytes</dd></div>
+            <div><dt>Package</dt><dd>APK · 96,845,542 bytes</dd></div>
           </dl>
-          <a class="button primary" href="downloads/Wake-1.5.0-android-build-5.apk" download>Download Android beta <span class="visually-hidden">1.5.0 version code 5 APK</span></a>
+          <a class="button primary" href="downloads/Wake-1.5.2-android-7-Nov-build-002.apk" download>Download Android beta <span class="visually-hidden">1.5.2 version code 7 APK, Nov build 002</span></a>
           <a class="text-link" href="#android-install">Android installation steps</a>
           <details class="checksum">
             <summary>Verify download (SHA-256)</summary>
-            <code>ee7df5551fb9b6c4688cedb8ee010e86dd6c83e49a8b63e39b53fe17658b2c29</code>
+            <code>e816c19d4bd9ad575a980e50cb1ff418bb9300afac58918a9de6c4da56c8c422</code>
+          </details>
+        </article>
+        <article class="download-card" aria-labelledby="iphone-heading">
+          <div class="download-card-heading"><span class="platform-label">iPhone</span><span class="release-badge">Ad-hoc beta</span></div>
+          <h3 id="iphone-heading">Wake for iPhone</h3>
+          <p>Internal ad-hoc build for provisioned devices only. This is not an App Store release; unregistered iPhones cannot install it.</p>
+          <dl class="release-details">
+            <div><dt>Version</dt><dd>1.5.2 · build 15</dd></div>
+            <div><dt>Channel</dt><dd>Provisioned devices</dd></div>
+            <div><dt>Package</dt><dd>IPA · 9,041,787 bytes</dd></div>
+          </dl>
+          <a class="button primary" href="https://expo.dev/accounts/naisystemss-team/projects/wake/builds/76335874-888b-45ac-ad0d-a5eeb5f783ab" referrerpolicy="no-referrer">iPhone install page <span class="visually-hidden">1.5.2 build 15, Nov build 002, on Expo</span></a>
+          <a class="text-link" href="#iphone-install">iPhone installation steps</a>
+          <details class="checksum">
+            <summary>Verify IPA (SHA-256)</summary>
+            <code>d416506e98e114378c0c8b1ce1043dce0ce938a6974b580ca7648a638bcc0400</code>
           </details>
         </article>
       </div>
@@ -122,6 +138,16 @@
           </ol>
           <p class="help-note">This is a beta APK, distributed outside Google Play. Physical Android pairing, controls and Wake testing are still pending.</p>
         </article>
+        <article id="iphone-install">
+          <h3>Install the iPhone beta</h3>
+          <ol class="steps">
+            <li>On your already-provisioned iPhone, open the <strong>iPhone install page</strong> above for Wake 1.5.2, build 15.</li>
+            <li>Use the installation instructions on that finished Expo build page. No App Store listing or public installation is available for this ad-hoc build.</li>
+            <li>If your iPhone is not provisioned, contact NAI Systems about beta eligibility. Downloading a file does not register a device.</li>
+            <li>For first-time setup, keep the PC awake and signed in and connect your phone to the same trusted network.</li>
+          </ol>
+          <p class="help-note">Mobile/device acceptance remains pending. This installation page does not grant public-release clearance or broaden beta eligibility.</p>
+        </article>
       </div>
       <div class="setup-help">
         <details open>
@@ -133,6 +159,7 @@
           <summary>Use basic Wake without an agent</summary>
           <p>Enable Wake-on-LAN in the computer’s firmware and network adapter settings. Add its name and the connected, wake-capable adapter’s MAC address in Wake. On Windows, <code>ipconfig /all</code> lists the MAC as <strong>Physical Address</strong>. The agent does not configure firmware or adapter wake settings for you.</p>
           <p>Hardware, power state and network equipment affect waking. A sent packet does not confirm that a computer woke.</p>
+          <p>Internet wake depends on compatible router/ISP configuration and a working delivery path to the computer. CGNAT, router restrictions or address changes can prevent delivery. Wake does not configure your router; encrypted internet status/history does not itself wake a sleeping PC.</p>
         </details>
         <details>
           <summary>Optional cloud beta and private invitations</summary>

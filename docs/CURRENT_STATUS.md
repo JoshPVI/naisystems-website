@@ -1,5 +1,27 @@
 # Current status
 
+## 3 November 2026 — Nov build 002 website update
+
+Updated current choices from the canonical `C:/NAI_Systems/wake/docs/builds/NOV_BUILD_002_MANIFEST.json` after reading the complete website handoff and batch/current-status records. Windows is 0.4.4 (58,612,934 bytes; SHA-256 `0E2E7DE649AA3A0BC2E8783C5E3C0650C802FE42E29C022DA38C530F87D3ED17`). Android is 1.5.2/code 7 (96,845,542 bytes; SHA-256 `E816C19D4BD9AD575A980E50CB1FF418BB9300AFAC58918A9DE6C4DA56C8C422`). Binaries were copied byte-for-byte, never rebuilt or repacked.
+
+iPhone 1.5.2/build 15 uses only the stable Expo installation page `https://expo.dev/accounts/naisystemss-team/projects/wake/builds/76335874-888b-45ac-ad0d-a5eeb5f783ab`. Ad-hoc provisioned devices only; no IPA is added to website output. IPA: 9,041,787 bytes; SHA-256 `D416506E98E114378C0C8B1CE1043DCE0CE938A6974B580CA7648A638BCC0400`. Both mobile jobs were independently read through EAS as FINISHED/INTERNAL with matching package/version/build; their actual downloaded artifacts matched canonical sizes/hashes. Android manifest/signature verified with SDK tools; certificate matches the recorded signer. No iOS binary-signature/physical-install acceptance is claimed.
+
+The checkout, GitHub main and production still point to the October release `9d4a7e3`, not Nov build 001. Neither Nov build 001 nor held Windows 0.4.3 is a current choice here. Existing October installer archives remain in both the repository and release output, with immutable paths/bytes. Source-repository Nov build 001/held 0.4.3 artifacts are untouched and are not newly exposed.
+
+Wake + Dawn is the main branding; the home/downloads corporate byline is removed and footer/publisher attribution remains. Copy explicitly limits current power commands to the local network, describes encrypted internet status/history and router/ISP-dependent internet wake, and retains internal/beta/device/release gates. No Command documentation, private profile/recovery material or installed-PC screenshots were added. Hosting/access settings are unchanged.
+
+Local release preparation, page/asset HTTP hashes, checksum disclosure and mobile menu/layout checks pass. Browser screenshot capture timed out; DOM/accessibility checks remained available. Publication will use the established GitHub main → Vercel authority reaffirmed by Josh's Nov build 002 request; live verification is recorded after deployment. Prior production deployment `dpl_B9aE7moogAnCc7VuPg6nnCKEa4tW` is the rollback baseline.
+
+## 27 October 2026 — published and verified
+
+Live: **https://www.naisystems.online/downloads.html**. Published through the approved GitHub main → Vercel route, commit `9d4a7e3b15c794f94a6a8a3a677e40443d47765d`, production deployment `dpl_B9aE7moogAnCc7VuPg6nnCKEa4tW` (READY). Vercel built the expected 14 files / 157,218,377 bytes and assigned the verified production domains.
+
+- Downloaded both complete installers from the public domain. Windows: 58,609,366 bytes, SHA-256 `CF7ACFA1E5F1FAED2A4A2F2EAC73C65BFDF654E9AED36ECD1287E9583A963542`. Android: 97,019,642 bytes, SHA-256 `EE7DF5551FB9B6C4688CEDB8EE010E86DD6C83E49A8B63E39B53FE17658B2C29`. Both returned HTTP 200, correct MIME types, attachment filenames and immutable caching.
+- Public downloads page hash matches the released manifest. Windows unsigned-beta, Android beta, pending physical-device testing and known-limit notices remain. Internal documentation, build script and release manifest URLs return 404.
+- Mobile browser checks passed: menu opens, Home → Downloads navigation, menu closes after navigation, Escape closes it, installation anchor works, and no horizontal overflow. No browser console errors reported. No physical handset/installer execution was performed; Android hardware testing remains pending.
+- Evidence: ignored `.release/production-verification.json`; screenshot `%TEMP%/nai-wake-downloads-live.png`. The live browser tab is retained for review.
+- Post-deployment documentation is updated locally without another push to avoid triggering an unnecessary production rebuild. The published commit remains `9d4a7e3`.
+
 ## 27 October 2026 — publication approved
 
 Josh explicitly approved publishing the prepared release through GitHub → Vercel, including the necessary Git publication actions. The reviewed manifest still matches `EE538A22AB1961920C135DB003E22DF6EDE4C25DFDB0FF35EBF9A7A156CF9BF3`, and local/remote main plus current Vercel production match baseline `820a5c0e31f72f1b9032f7c543491755ac536aca`. Next: commit/push the approved release, require the matching production deployment to reach READY, verify both public installer transfers against the manifest and check mobile navigation/notices. Physical-device testing remains pending.

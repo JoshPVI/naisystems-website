@@ -1,6 +1,20 @@
 # Wake Downloads — publication review
 
+## Nov build 002 — 3 November 2026
+
+Josh's current request reaffirms the existing GitHub → Vercel publication authority for this exact update. Keep current team/project/domain/access settings. The rollback baseline is production deployment `dpl_B9aE7moogAnCc7VuPg6nnCKEa4tW`, commit `9d4a7e3`.
+
+Current artifacts: Windows 0.4.4 ZIP, Android 1.5.2/code 7 APK, and iPhone 1.5.2/build 15 through the stable Expo ad-hoc installation page. Exact identities/sizes/SHA-256 values are in `release/wake-installers.json`, derived from the canonical Nov build 002 manifest. Both mobile jobs are FINISHED/INTERNAL and actual EAS downloads matched. The IPA is not self-hosted or linked through an expiring artifact URL. Only provisioned devices can install it.
+
+Current hosted artifacts are 58,612,934 and 96,845,542 bytes, each below GitHub's 100 MiB per-file limit. Existing October archive files stay at their original URLs with recorded hashes. The full output includes current and archive files; use the existing Git-based hosting route, not a Hobby CLI source upload. Immutable caching and the same access model are preserved. No held 0.4.3 or additional private files are introduced. The checkout/production had not published Nov build 001, so there is no Nov build 001 current choice to remove here; source archives remain untouched.
+
+Before pushing: run the release preparation, verify staged bytes against its generated manifest, check the local page/mobile layout and confirm all beta/ad-hoc/capability notices. After READY: download both new files completely from the production domain and compare byte sizes/SHA-256; check archive URLs, page hashes, mobile links/menu and internal-file exclusions. The iPhone link must remain the finished provisioned-device install page. No device installation/power testing or public-release clearance is part of this publication.
+
+The October review and verification history below are retained as historical evidence; their old current-version labels and byte totals are not the Nov build 002 release.
+
 Prepared 27 October 2026. **Josh explicitly approved publication through GitHub → Vercel on 27 October 2026. Publication and live verification are now authorized.**
+
+Published and verified: https://www.naisystems.online/downloads.html — commit `9d4a7e3b15c794f94a6a8a3a677e40443d47765d`, production deployment `dpl_B9aE7moogAnCc7VuPg6nnCKEa4tW` (READY). Both full public installer downloads match the recorded byte sizes and SHA-256 hashes; live mobile navigation and retained beta/testing notices passed. See CURRENT_STATUS.md for results. The baseline below remains the rollback reference.
 
 ## Production destination verified
 

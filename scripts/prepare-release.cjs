@@ -5,12 +5,15 @@ const crypto = require('node:crypto');
 const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'dist');
-const installers = JSON.parse(fs.readFileSync(path.join(root, 'release/wake-installers.json'), 'utf8')).installers;
+const release = JSON.parse(fs.readFileSync(path.join(root, 'release/wake-installers.json'), 'utf8'));
+const { installers, ios } = release;
+// Keep previously published URLs immutable without offering them as current builds.
+const hostedArtifacts = [...installers, ...(release.archives || [])];
 const publicFiles = [
   'index.html', 'services.html', 'projects.html', 'downloads.html', 'about.html', 'contact.html',
   'css/styles.css', 'assets/apple-touch-icon.png', 'assets/favicon.ico',
   'assets/nai-logo-transparent.png', 'assets/nai-social-preview-1200x630.png', 'assets/wake-dawn.svg',
-  ...installers.map(item => item.file),
+  ...hostedArtifacts.map(item => item.file),
 ].sort();
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
 
@@ -26,7 +29,7 @@ const manifest = publicFiles.map(file => {
   const data = fs.readFileSync(checkRegularFile(file));
   return { file, bytes: data.length, sha256: hash(data) };
 });
-for (const installer of installers) {
+for (const installer of hostedArtifacts) {
   const actual = manifest.find(item => item.file === installer.file);
   if (!actual || actual.bytes !== installer.bytes || actual.sha256 !== installer.sha256 || actual.bytes >= 104857600) {
     throw new Error(`Installer does not match its approved manifest or GitHub file limit: ${installer.file}`);
@@ -38,10 +41,16 @@ for (const installer of installers) {
     if (!downloads.includes(value)) throw new Error(`Downloads page missing approved installer detail: ${value}`);
   }
 }
-for (const notice of ['Unsigned beta', 'Android beta', 'Android handset validation is pending', 'Physical Android pairing, controls and Wake testing are still pending.']) {
+for (const value of [release.label, ios.installUrl, ios.version, `build ${ios.build}`, ios.bytes.toLocaleString('en-US'), ios.sha256]) {
+  if (!downloads.includes(value)) throw new Error(`iPhone/batch metadata missing: ${value}`);
+}
+for (const notice of ['Unsigned beta', 'Android beta', 'Android handset validation', 'Physical Android pairing, controls and Wake testing are still pending.', 'provisioned devices only', 'not an App Store release', 'internet power commands are not implemented', 'router/ISP configuration', 'public-release clearance has not been granted']) {
   if (!downloads.includes(notice)) throw new Error(`Required beta notice missing: ${notice}`);
 }
 if (/Build queued|Download pending/.test(downloads)) throw new Error('Outdated download-availability notice.');
+if (/Nov build 001|0\.4\.3|Wake Command|apps\.apple\.com|play\.google\.com/.test(downloads)) throw new Error('Held/outdated build, unapproved product documentation or invented store link.');
+if (/by NAI Systems/.test(downloads.match(/<div class="wake-lockup">[\s\S]*?<\/div>/)?.[0] || '')) throw new Error('Corporate byline in main Wake lockup.');
+if (publicFiles.some(file => file.endsWith('.ipa'))) throw new Error('iPhone distribution must use its provisioned-device install page.');
 for (const file of publicFiles.filter(file => file.endsWith('.html'))) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   for (const [, url] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
