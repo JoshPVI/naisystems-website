@@ -682,6 +682,12 @@ summary { cursor: pointer; font-weight: 700; }
 summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .setup-help summary { font-size: 1.05rem; }
 .setup-help p { max-width: 850px; margin: 16px 0 0; }
+.wake-setup-guide { margin: 28px 0; scroll-margin-top: 100px; }
+.wake-setup-guide details { scroll-margin-top: 100px; }
+.wake-setup-guide li { max-width: 850px; margin-top: 12px; overflow-wrap: anywhere; }
+.wake-setup-guide nav ul { columns: 2; padding-left: 22px; }
+.wake-setup-guide nav li { break-inside: avoid; }
+@media (max-width: 620px) { .wake-setup-guide nav ul { columns: 1; } }
 .checksum { margin-top: 22px; font-size: 0.82rem; color: var(--muted); }
 .checksum code { display: block; overflow-wrap: anywhere; margin-top: 12px; padding: 12px; border-radius: 8px; background: var(--soft); }
 #installation,

@@ -1,5 +1,9 @@
 # Website architecture
 
+## 3 November 2026 — detailed Wake guide publication approved
+
+Josh explicitly says “Yes you can publish” in Wake thread 01a19ed5-af85-7b51-a9e2-5a499af98283 after the prepared guide preview. This authorizes this guide/CSS publication and necessary website Git commit/main push through GitHub → Vercel. Canonical Wake ADR-047 / BUG-028/029/030. Publish from production baseline baf80e1 in an isolated checkout, preserving newer unapproved installer preparation in the original checkout. Windows 0.4.5, local Android 1.5.3/code 8, iPhone build 15 and all archives remain unchanged. Current guide includes Fast Startup versus BIOS Fast Boot, Windows sign-in options and unconfirmed command outcomes. Dan’s Ethernet Sleep → Wake works; shutdown Wake remains unresolved. No native build, credential/settings change or real power action. Require matching commit/READY domains, live page/mobile guide and binary-manifest continuity after push. See WAKE_SETUP_PUBLICATION.md.
+
 Current prepared manifest supports `role: primary` and `role: alternative` within current installers (Windows EXE/ZIP), plus the independently versioned local Android primary. Builder verifies each current artifact within its own platform card, primary-button identity, Android code, and exact download MIME/attachment headers for all current/archive binaries. Multiple source manifests record Windows build and local Android verification provenance. iOS metadata remains independent. EXE downloads use application/octet-stream with an attachment filename; binaries are copied without transformation.
 
 The detected or manually selected download card moves first using its existing DOM node. Preserve default relative ordering for the remaining cards and restore the complete default order for unknown-device automatic mode. Visual, reading and keyboard order stay aligned; checksum disclosure state is preserved.
