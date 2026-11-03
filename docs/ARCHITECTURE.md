@@ -1,6 +1,12 @@
 # Website architecture
 
+Current prepared manifest supports `role: primary` and `role: alternative` within current installers (Windows EXE/ZIP), plus the independently versioned local Android primary. Builder verifies each current artifact within its own platform card, primary-button identity, Android code, and exact download MIME/attachment headers for all current/archive binaries. Multiple source manifests record Windows build and local Android verification provenance. iOS metadata remains independent. EXE downloads use application/octet-stream with an attachment filename; binaries are copied without transformation.
+
+The detected or manually selected download card moves first using its existing DOM node. Preserve default relative ordering for the remaining cards and restore the complete default order for unknown-device automatic mode. Visual, reading and keyboard order stay aligned; checksum disclosure state is preserved.
+
 Static HTML pages share `css/styles.css` and `assets/`. Each page contains its own navigation and footer; keep links consistent across all six pages. `downloads.html` uses native details/summary for installation help and checksums, and a small inline navigation handler. No framework or runtime dependencies are required.
+
+The Downloads device recommendation is progressive enhancement in `downloads.html`: browser platform hints/user-agent fallback select Windows, Android or iPhone, with a manual selector. It reuses each verified card's current link/label/attributes; every card remains visible. The panel stays hidden without JavaScript. No detection requests, storage or analytics are added; iPad/unknown devices receive no automatic package recommendation. Shared CSS scopes panel styles to `.download-recommendation` and `.download-choice`.
 
 Versioned installer packages belong under `downloads/` or a verified external release-asset host. The page's version, size, hash and link must describe the exact same immutable artifact. Never place secrets or operational runtime directories under the public site root.
 

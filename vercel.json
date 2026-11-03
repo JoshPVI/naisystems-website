@@ -67,6 +67,45 @@
           "value": "attachment; filename=\"Wake-1.5.2-android-7-Nov-build-002.apk\""
         }
       ]
+    },
+    {
+      "source": "/downloads/Wake-Agent-Setup-0.4.5-win-x64.exe",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Wake-Agent-Setup-0.4.5-win-x64.exe\""
+        }
+      ]
+    },
+    {
+      "source": "/downloads/Wake-Agent-0.4.5-win-x64.zip",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/zip"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Wake-Agent-0.4.5-win-x64.zip\""
+        }
+      ]
+    },
+    {
+      "source": "/downloads/Wake-1.5.3-android-8-local.apk",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.android.package-archive"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Wake-1.5.3-android-8-local.apk\""
+        }
+      ]
     }
   ]
 }

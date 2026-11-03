@@ -1,5 +1,18 @@
 # Changelog
 
+## 3 November 2026 — combined tester update (prepared locally)
+
+- Stage Windows Agent 0.4.5 setup EXE as primary, with optional 0.4.5 ZIP, and the selected release-signed local Android 1.5.3/code 8 APK. Update links, versions, exact bytes and SHA-256 together.
+- Update setup/Overview/pairing and Android data-preserving upgrade guidance; retain unsigned/internal-beta, Windows interactive and Pixel Android 17 acceptance limits.
+- Preserve platform detection, recommended-card order, manual selection, iPhone build 15 and all older hosted files. Verify full loopback transfers and APK identity/signature. No publication.
+
+## 3 November 2026 — download device detection (prepared locally)
+
+- Move the detected or manually selected platform's full card first on desktop/mobile, with matching reading/keyboard order; unknown-device automatic mode restores the default order.
+
+- Recommend the current Windows, Android or provisioned-iPhone beta from browser device hints, with a manual selector and all packages still visible.
+- Reuse verified card links and retain beta/testing/platform restrictions. Unknown devices and disabled JavaScript keep the full download list; detection stays in the browser. Not yet published.
+
 ## 3 November 2026 — Nov build 002
 
 - Update current downloads to verified Windows Agent 0.4.4 and Android Wake 1.5.2/code 7, with matching immutable filenames, sizes and SHA-256 values.

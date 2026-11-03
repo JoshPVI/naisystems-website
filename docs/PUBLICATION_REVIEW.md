@@ -1,6 +1,18 @@
 # Wake Downloads — publication review
 
+## 3 November 2026 — combined update approved for publication
+
+Josh explicitly approved “Just publish” for the prepared candidate described in NOV_BUILD_004_REVIEW.md, including detection/card ordering and necessary Git publication actions. Baseline is `9b078e5` / `dpl_DuvyeLmHo7vaQK5ENW3z2mLwShj9`. Use the existing GitHub → Vercel production route and complete the recorded live checks; preserve current access and all beta/device notices. Earlier preparation-only statements below describe the state before this approval.
+
+## Windows Nov build 004 + local Android — prepared, not approved for publication
+
+Read [NOV_BUILD_004_REVIEW.md](NOV_BUILD_004_REVIEW.md) for the current review candidate, exact URLs, hashes and validation. Primary Windows is the unsigned 0.4.5 setup EXE, with an optional ZIP; Android is the selected existing-release-key-signed local 1.5.3/code 8 APK. iPhone stays 1.5.2/build 15. The site includes detection/card ordering, four immutable archive files, three current binaries and current beta restrictions. Local complete HTTP transfers pass; public transfer checks remain pending publication. Current production baseline: `9b078e5` / `dpl_DuvyeLmHo7vaQK5ENW3z2mLwShj9`.
+
+The handoff authorizes preparing these artifacts, not another commit/push/deployment or wider access. Use the existing GitHub main → Vercel route only after separate explicit approval, then verify all three new public responses (filenames, full byte counts, SHA-256), archive continuity, iPhone destination, mobile navigation and protected internal-file exclusions. No direct CLI upload, environment/domain/access change or public-release clearance. The seven binaries individually remain below 100 MiB; total static output is 532,382,316 bytes. Existing earlier approvals below are historical and apply to their reviewed batches.
+
 ## Nov build 002 — 3 November 2026
+
+Published commit `9b078e5`, READY deployment `dpl_DuvyeLmHo7vaQK5ENW3z2mLwShj9`. Actual current/archive downloads and the completed-job IPA matched recorded sizes/hashes. Final verification and changed-file report: [NOV_BUILD_002_PUBLICATION.md](NOV_BUILD_002_PUBLICATION.md).
 
 Josh's current request reaffirms the existing GitHub → Vercel publication authority for this exact update. Keep current team/project/domain/access settings. The rollback baseline is production deployment `dpl_B9aE7moogAnCc7VuPg6nnCKEa4tW`, commit `9d4a7e3`.
 

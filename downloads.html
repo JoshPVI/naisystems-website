@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wake Downloads | NAI Systems</title>
-  <meta name="description" content="Wake Nov build 002: internal Windows and Android beta downloads, provisioned iPhone installation, setup help and known limitations.">
+  <meta name="description" content="Wake internal beta downloads: Windows Agent 0.4.5, local Android 1.5.3/code 8 APK, provisioned iPhone installation and setup help.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:title" content="Wake Downloads | NAI Systems">
-  <meta property="og:description" content="Wake Nov build 002: Windows and Android internal betas, provisioned iPhone installation and setup help.">
+  <meta property="og:description" content="Wake Windows Agent 0.4.5 and local Android 1.5.3/code 8 beta downloads, with provisioned iPhone installation and setup help.">
   <meta property="og:image" content="https://www.naisystems.online/assets/nai-social-preview-1200x630.png">
   <meta property="og:url" content="https://www.naisystems.online/downloads.html">
   <meta property="og:type" content="website">
@@ -46,9 +46,9 @@
         <a class="text-link" href="#installation">Installation help <span aria-hidden="true">↓</span></a>
       </div>
       <aside class="wake-beta-note" aria-label="Beta release notice">
-        <span class="release-badge">Nov build 002</span>
+        <span class="release-badge">Internal tester builds</span>
         <h2>For beta testers</h2>
-        <p>Internal test builds for beta testers; public-release clearance has not been granted. Windows packages are unsigned. Mobile/device acceptance remains pending, including Android handset validation. Hibernate-to-Wake remains unresolved.</p>
+        <p>Internal test builds for beta testers; public-release clearance has not been granted. Windows packages are unsigned; interactive Windows pairing/scaling acceptance remains pending. Mobile/device acceptance remains pending, including Android handset validation. Hibernate-to-Wake remains unresolved.</p>
         <p>Basic local Wake needs no agent, account or cloud invitation. Compatible hardware and Wake-on-LAN setup are required.</p>
       </aside>
     </div>
@@ -59,23 +59,42 @@
       <div class="section-heading">
         <p class="eyebrow">Choose your platform</p>
         <h2 id="downloads-heading">Get Wake</h2>
-        <p><strong>Nov build 002</strong> · Release information checked on <time datetime="2026-11-03">3 November 2026</time>.</p>
+        <p>Windows <strong>Nov build 004</strong> · Android local build · iPhone unchanged. Release information checked on <time datetime="2026-11-03">3 November 2026</time>.</p>
+      </div>
+      <div class="download-recommendation" id="download-recommendation" hidden>
+        <div class="download-choice">
+          <label for="download-platform">Download for</label>
+          <select id="download-platform">
+            <option value="auto">This device (detect automatically)</option>
+            <option value="windows">Windows x64</option>
+            <option value="android">Android</option>
+            <option value="iphone">iPhone (provisioned devices)</option>
+          </select>
+        </div>
+        <p id="download-recommendation-note" role="status" aria-live="polite" aria-atomic="true"></p>
+        <a class="button primary" id="recommended-download" aria-describedby="download-recommendation-note" hidden></a>
       </div>
       <div class="download-grid">
         <article class="download-card" aria-labelledby="windows-heading">
           <div class="download-card-heading"><span class="platform-label">Windows</span><span class="release-badge">Unsigned beta</span></div>
           <h3 id="windows-heading">Windows Agent</h3>
-          <p>Optional companion for phone pairing, local power controls and computer status. Runs while you are signed in to Windows.</p>
+          <p>Optional companion for phone pairing, local power controls and computer status. Automatically connects on a single eligible private network; choose on Overview when needed. Runs while you are signed in to Windows.</p>
           <dl class="release-details">
-            <div><dt>Version</dt><dd>0.4.4</dd></div>
+            <div><dt>Version</dt><dd>0.4.5 · Nov build 004</dd></div>
             <div><dt>Platform</dt><dd>Windows x64</dd></div>
-            <div><dt>Package</dt><dd>ZIP · 58,612,934 bytes</dd></div>
+            <div><dt>Package</dt><dd>Setup EXE · 64,104,668 bytes</dd></div>
           </dl>
-          <a class="button primary" href="downloads/Wake-Agent-0.4.4-win-x64.zip" download>Download Windows Agent <span class="visually-hidden">0.4.4 ZIP, Nov build 002</span></a>
+          <a class="button primary" href="downloads/Wake-Agent-Setup-0.4.5-win-x64.exe" download>Download Windows Agent <span class="visually-hidden">0.4.5 setup EXE, Nov build 004</span></a>
           <a class="text-link" href="#windows-install">Windows installation steps</a>
           <details class="checksum">
             <summary>Verify download (SHA-256)</summary>
-            <code>0e2e7de649aa3a0bc2e8783c5e3c0650c802fe42e29c022da38c530f87d3ed17</code>
+            <code>1091f66fb386d939f906b82e9e1ed06cbe998e864b4f315d1cf90d23e19b94e2</code>
+          </details>
+          <details class="checksum">
+            <summary>Alternative ZIP · 0.4.5</summary>
+            <p><a class="text-link" href="downloads/Wake-Agent-0.4.5-win-x64.zip" download>Download Windows Agent ZIP</a> · 58,615,898 bytes. Extract and run <strong>Install-WakeAgent.cmd</strong>.</p>
+            <p>SHA-256:</p>
+            <code>873d7cae6cf29a433a310118dfa4e1346308cedb935a26e8d8f3a25d9280e099</code>
           </details>
         </article>
         <article class="download-card" aria-labelledby="android-heading">
@@ -83,15 +102,15 @@
           <h3 id="android-heading">Wake for Android</h3>
           <p>Wake-on-LAN, computer discovery and Windows Agent pairing in the shared Wake interface.</p>
           <dl class="release-details">
-            <div><dt>Version</dt><dd>1.5.2 · version code 7</dd></div>
-            <div><dt>Channel</dt><dd>Android beta · APK</dd></div>
-            <div><dt>Package</dt><dd>APK · 96,845,542 bytes</dd></div>
+            <div><dt>Version</dt><dd>1.5.3 · version code 8</dd></div>
+            <div><dt>Channel</dt><dd>Android beta · local APK</dd></div>
+            <div><dt>Package</dt><dd>APK · 96,975,989 bytes</dd></div>
           </dl>
-          <a class="button primary" href="downloads/Wake-1.5.2-android-7-Nov-build-002.apk" download>Download Android beta <span class="visually-hidden">1.5.2 version code 7 APK, Nov build 002</span></a>
+          <a class="button primary" href="downloads/Wake-1.5.3-android-8-local.apk" download>Download Android beta <span class="visually-hidden">1.5.3 version code 8 local APK, Nov build 003 source</span></a>
           <a class="text-link" href="#android-install">Android installation steps</a>
           <details class="checksum">
             <summary>Verify download (SHA-256)</summary>
-            <code>e816c19d4bd9ad575a980e50cb1ff418bb9300afac58918a9de6c4da56c8c422</code>
+            <code>1265d802543fa9bf3ba351178295b2155f521586b336d433c660f8e74fa2812d</code>
           </details>
         </article>
         <article class="download-card" aria-labelledby="iphone-heading">
@@ -122,21 +141,22 @@
         <article id="windows-install">
           <h3>Install the Windows Agent</h3>
           <ol class="steps">
-            <li>Download the ZIP and extract it into a folder. If updating, first choose <strong>Quit</strong> from the existing agent’s tray menu.</li>
-            <li>Run <strong>Install-WakeAgent.cmd</strong>. Confirm installation for your Windows user and choose whether to start at sign-in. No separate .NET installation is needed.</li>
+            <li>Download and run <strong>Wake-Agent-Setup-0.4.5-win-x64.exe</strong>. If updating, first choose <strong>Quit</strong> from the existing agent’s tray menu.</li>
+            <li>Confirm installation for your Windows user and choose whether to start at sign-in. No separate .NET installation is needed. The alternative ZIP uses <strong>Install-WakeAgent.cmd</strong> after extraction.</li>
             <li>The optional firewall rule needs administrator approval. It allows the agent on Private/Domain networks and the local subnet. Keep Windows security protections enabled; this beta is unsigned.</li>
-            <li>Open <strong>Wake Agent</strong> from Start. In <strong>Settings</strong>, select your wake-capable Ethernet or Wi-Fi adapter and choose <strong>Start / Change adapter</strong>. Use a trusted private network.</li>
+            <li>Open <strong>Wake Agent</strong> from Start. One eligible physical private network connects automatically. If a choice is needed, select the correct network on <strong>Overview</strong> and choose <strong>Connect</strong>. Use a trusted private network.</li>
           </ol>
         </article>
         <article id="android-install">
           <h3>Install the Android beta</h3>
           <ol class="steps">
-            <li>On your Android phone, choose <strong>Download Android beta</strong> above and open the APK.</li>
+            <li>On your Android phone, choose <strong>Download Android beta</strong> above and open the APK. Install over the existing Wake app to preserve its data; do not uninstall first.</li>
             <li>If prompted, allow installation from the browser used for this download; remove that permission afterwards if you no longer need it.</li>
             <li>Open <strong>Wake</strong> and connect to the same trusted network as your awake PC. No Expo Go or development server is required.</li>
             <li>Add a computer manually for basic Wake, or pair the optional Windows Agent to import its MAC address and enable approved controls.</li>
           </ol>
           <p class="help-note">This is a beta APK, distributed outside Google Play. Physical Android pairing, controls and Wake testing are still pending.</p>
+          <p class="help-note">Local release-signed build with bundled JavaScript; no Metro or development server needed. Emulator upgrade/launch checks passed. Pixel / Android 17 re-pair and refresh acceptance remains pending. For legacy pairing keys, create a fresh invitation on the PC and pair again.</p>
         </article>
         <article id="iphone-install">
           <h3>Install the iPhone beta</h3>
@@ -152,7 +172,7 @@
       <div class="setup-help">
         <details open>
           <summary>Pair your phone with the Windows Agent</summary>
-          <p>Keep the PC awake and signed in, with both devices on the same trusted LAN. In Windows, choose <strong>Pair a phone</strong>. Scan the QR or paste the invitation into Wake’s <strong>Pair Windows Agent</strong> screen, then approve the named phone on the PC. Grant only the actions you want and save the returned computer details on the phone.</p>
+          <p>Keep the PC awake and signed in, with both devices on the same trusted LAN. In Windows, choose <strong>Pair a phone</strong>. Review the local controls: all are initially selected for a new invitation, and you can change them before approving the named phone on the PC. Scan the QR or paste the invitation into Wake’s <strong>Pair Windows Agent</strong> screen and follow the phone’s save/confirmation steps. Existing phone grants remain unchanged; internet consent is separate.</p>
           <p>You can switch to Remote Desktop on that phone to approve, then return to Wake within five minutes. If Wake is force-quit or the agent restarts during pairing, create a new invitation.</p>
         </details>
         <details>
@@ -195,6 +215,65 @@
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') closeNavigation();
   });
+</script>
+<script>
+  // A convenience hint, not a compatibility or provisioning check. Keep every package visible.
+  function detectWakePlatform(device) {
+    const platform = (device.userAgentData?.platform || '').toLowerCase();
+    const agent = device.userAgent || '';
+    if (/Windows Phone|IEMobile/i.test(agent)) return '';
+    if (platform === 'android' || /Android/i.test(agent)) return 'android';
+    if (/iPhone/i.test(agent)) return 'iphone';
+    // Do not offer the iPhone build to iPads, including desktop-mode Safari.
+    if (/iPad|iPod/i.test(agent) || (/Mac/i.test(device.platform || '') && device.maxTouchPoints > 1)) return '';
+    if (platform === 'windows' || /Windows NT/i.test(agent)) return 'windows';
+    return '';
+  }
+
+  (function() {
+    const panel = document.getElementById('download-recommendation');
+    const choice = document.getElementById('download-platform');
+    const note = document.getElementById('download-recommendation-note');
+    const button = document.getElementById('recommended-download');
+    const grid = document.querySelector('.download-grid');
+    const defaultCards = Array.from(grid.children);
+    const notes = {
+      windows: 'Windows x64 required. Unsigned beta; the Agent is an optional PC companion.',
+      android: 'Android beta. Physical-device testing remains pending.',
+      iphone: 'Ad-hoc beta for provisioned iPhones only. Not an App Store release.'
+    };
+    const names = { windows: 'Windows', android: 'Android', iphone: 'iPhone' };
+    let detected = '';
+    try { detected = detectWakePlatform(navigator); } catch (_) { /* Manual selection remains available. */ }
+    function updateRecommendation() {
+      const selected = choice.value === 'auto' ? detected : choice.value;
+      const source = selected && document.querySelector('[aria-labelledby="' + selected + '-heading"] .button');
+      const recommendedCard = source && source.closest('.download-card');
+      // Move the actual nodes so visual, screen-reader and keyboard order agree.
+      grid.replaceChildren(...(recommendedCard
+        ? [recommendedCard, ...defaultCards.filter(card => card !== recommendedCard)]
+        : defaultCards));
+      button.hidden = true;
+      button.removeAttribute('href');
+      button.removeAttribute('download');
+      button.removeAttribute('referrerpolicy');
+      button.textContent = '';
+      if (!source) {
+        note.textContent = 'No package detected for this device. Choose a platform or browse all downloads below.';
+        return;
+      }
+      note.textContent = (choice.value === 'auto' ? names[selected] + ' detected. ' : '') + notes[selected];
+      // Reuse the verified card link and label so release updates cannot leave a stale recommendation.
+      button.innerHTML = source.innerHTML;
+      for (const attribute of ['href', 'download', 'referrerpolicy']) {
+        if (source.hasAttribute(attribute)) button.setAttribute(attribute, source.getAttribute(attribute));
+      }
+      button.hidden = false;
+    }
+    choice.addEventListener('change', updateRecommendation);
+    updateRecommendation();
+    panel.hidden = false;
+  })();
 </script>
 </body>
 </html>

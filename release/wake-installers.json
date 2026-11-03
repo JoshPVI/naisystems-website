@@ -1,30 +1,43 @@
 {
-  "label": "Nov build 002",
+  "label": "Nov build 004",
   "date": "2026-11-03",
-  "sourceManifestSha256": "52b503fd1b1ae5d282b7422a55b294b68cfc0ef07fac42b3a8665d78c7691926",
   "installers": [
     {
       "platform": "windows",
-      "file": "downloads/Wake-Agent-0.4.4-win-x64.zip",
-      "version": "0.4.4",
-      "batch": "Nov build 002",
-      "bytes": 58612934,
-      "sha256": "0e2e7de649aa3a0bc2e8783c5e3c0650c802fe42e29c022da38c530f87d3ed17",
+      "role": "primary",
+      "file": "downloads/Wake-Agent-Setup-0.4.5-win-x64.exe",
+      "version": "0.4.5",
+      "batch": "Nov build 004",
+      "bytes": 64104668,
+      "sha256": "1091f66fb386d939f906b82e9e1ed06cbe998e864b4f315d1cf90d23e19b94e2",
+      "channel": "unsigned internal Windows beta",
+      "physicalDeviceAcceptance": "pending"
+    },
+    {
+      "platform": "windows",
+      "role": "alternative",
+      "file": "downloads/Wake-Agent-0.4.5-win-x64.zip",
+      "version": "0.4.5",
+      "batch": "Nov build 004",
+      "bytes": 58615898,
+      "sha256": "873d7cae6cf29a433a310118dfa4e1346308cedb935a26e8d8f3a25d9280e099",
       "channel": "unsigned internal Windows beta",
       "physicalDeviceAcceptance": "pending"
     },
     {
       "platform": "android",
-      "file": "downloads/Wake-1.5.2-android-7-Nov-build-002.apk",
-      "version": "1.5.2",
-      "versionCode": 7,
+      "role": "primary",
+      "file": "downloads/Wake-1.5.3-android-8-local.apk",
+      "version": "1.5.3",
+      "versionCode": 8,
       "package": "au.com.naisystems.wake",
-      "buildPage": "https://expo.dev/accounts/naisystemss-team/projects/wake/builds/329fa8fd-d947-452a-9acf-6c406e964bd7",
-      "batch": "Nov build 002",
-      "bytes": 96845542,
-      "sha256": "e816c19d4bd9ad575a980e50cb1ff418bb9300afac58918a9de6c4da56c8c422",
+      "batch": "Nov build 003",
+      "buildMethod": "local-gradle",
+      "bytes": 96975989,
+      "sha256": "1265d802543fa9bf3ba351178295b2155f521586b336d433c660f8e74fa2812d",
+      "certificateSha256": "d0d645e050728f31f5d93542a7a4056573cbbb7d53731fb4d115f72a3e860321",
       "channel": "internal Android beta",
-      "physicalDeviceAcceptance": "pending"
+      "physicalDeviceAcceptance": "Pixel Android 17 re-pair/refresh acceptance pending (BUG-023)"
     }
   ],
   "ios": {
@@ -57,6 +70,39 @@
       "sha256": "ee7df5551fb9b6c4688cedb8ee010e86dd6c83e49a8b63e39b53fe17658b2c29",
       "channel": "Android beta",
       "physicalDeviceTesting": "pending"
+    },
+    {
+      "platform": "windows",
+      "file": "downloads/Wake-Agent-0.4.4-win-x64.zip",
+      "version": "0.4.4",
+      "batch": "Nov build 002",
+      "bytes": 58612934,
+      "sha256": "0e2e7de649aa3a0bc2e8783c5e3c0650c802fe42e29c022da38c530f87d3ed17",
+      "channel": "unsigned internal Windows beta",
+      "physicalDeviceAcceptance": "pending"
+    },
+    {
+      "platform": "android",
+      "file": "downloads/Wake-1.5.2-android-7-Nov-build-002.apk",
+      "version": "1.5.2",
+      "versionCode": 7,
+      "package": "au.com.naisystems.wake",
+      "buildPage": "https://expo.dev/accounts/naisystemss-team/projects/wake/builds/329fa8fd-d947-452a-9acf-6c406e964bd7",
+      "batch": "Nov build 002",
+      "bytes": 96845542,
+      "sha256": "e816c19d4bd9ad575a980e50cb1ff418bb9300afac58918a9de6c4da56c8c422",
+      "channel": "internal Android beta",
+      "physicalDeviceAcceptance": "pending"
+    }
+  ],
+  "sourceManifests": [
+    {
+      "file": "NOV_BUILD_004_MANIFEST.json",
+      "sha256": "920ad8e352ca27d7e80fcfd2021dcffb60f50af29c699341f17b0a3deec8f18b"
+    },
+    {
+      "file": "ANDROID_LOCAL_VERIFICATION_2026_11_03_MANIFEST.json",
+      "sha256": "fcbbb31fc297a88d6bbd31b5cf6cb137b4b5d43a2e31f663b3ccc1d83b09ff7a"
     }
   ]
 }

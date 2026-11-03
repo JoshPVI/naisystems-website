@@ -36,16 +36,29 @@ for (const installer of hostedArtifacts) {
   }
 }
 const downloads = fs.readFileSync(path.join(root, 'downloads.html'), 'utf8');
+const hosting = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
 for (const installer of installers) {
+  const card = downloads.match(new RegExp(`<article class="download-card" aria-labelledby="${installer.platform}-heading">([\\s\\S]*?)</article>`))?.[1] || '';
   for (const value of [installer.file, installer.version, installer.bytes.toLocaleString('en-US'), installer.sha256]) {
-    if (!downloads.includes(value)) throw new Error(`Downloads page missing approved installer detail: ${value}`);
+    if (!card.includes(value)) throw new Error(`Platform card missing approved installer detail: ${value}`);
   }
+  if (installer.role === 'primary' && !card.includes(`class="button primary" href="${installer.file}"`)) throw new Error(`Primary download is not the selected artifact: ${installer.file}`);
+  if (installer.versionCode && !card.includes(`version code ${installer.versionCode}`)) throw new Error('Android version code mismatch.');
+}
+for (const installer of hostedArtifacts) {
+  const headers = hosting.headers.find(rule => rule.source === '/' + installer.file)?.headers || [];
+  const filename = path.basename(installer.file);
+  const type = filename.endsWith('.exe') ? 'application/octet-stream' : filename.endsWith('.zip') ? 'application/zip' : 'application/vnd.android.package-archive';
+  if (!headers.some(header => header.key === 'Content-Type' && header.value === type) || !headers.some(header => header.key === 'Content-Disposition' && header.value === `attachment; filename="${filename}"`)) throw new Error(`Download response headers missing: ${installer.file}`);
 }
 for (const value of [release.label, ios.installUrl, ios.version, `build ${ios.build}`, ios.bytes.toLocaleString('en-US'), ios.sha256]) {
   if (!downloads.includes(value)) throw new Error(`iPhone/batch metadata missing: ${value}`);
 }
 for (const notice of ['Unsigned beta', 'Android beta', 'Android handset validation', 'Physical Android pairing, controls and Wake testing are still pending.', 'provisioned devices only', 'not an App Store release', 'internet power commands are not implemented', 'router/ISP configuration', 'public-release clearance has not been granted']) {
   if (!downloads.includes(notice)) throw new Error(`Required beta notice missing: ${notice}`);
+}
+for (const notice of ['Pixel / Android 17 re-pair and refresh acceptance remains pending', 'Install over the existing Wake app', 'fresh invitation on the PC']) {
+  if (!downloads.includes(notice)) throw new Error(`Local Android upgrade/testing notice missing: ${notice}`);
 }
 if (/Build queued|Download pending/.test(downloads)) throw new Error('Outdated download-availability notice.');
 if (/Nov build 001|0\.4\.3|Wake Command|apps\.apple\.com|play\.google\.com/.test(downloads)) throw new Error('Held/outdated build, unapproved product documentation or invented store link.');

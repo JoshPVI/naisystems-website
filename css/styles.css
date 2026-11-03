@@ -647,6 +647,15 @@ ol {
 .download-grid,
 .installation-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .downloads-section { padding: 52px 0; }
+.download-recommendation { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-bottom: 24px; padding: 22px 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--accent-soft); }
+.download-recommendation[hidden],
+.download-recommendation [hidden] { display: none; }
+.download-choice { display: grid; gap: 6px; }
+.download-choice label { font-weight: 750; }
+.download-choice select { max-width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--text); font: inherit; }
+.download-choice select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.download-recommendation p { flex: 1 1 220px; margin: 0; font-size: 0.9rem; }
+.download-recommendation .button { flex-shrink: 0; }
 .download-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 10px 28px #102d580a; }
 .download-card-heading { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; margin-bottom: 22px; }
 .platform-label { color: var(--muted); font-size: 0.85rem; font-weight: 750; }
@@ -693,6 +702,8 @@ summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 }
 
 @media (max-width: 520px) {
+  .download-recommendation { padding: 22px; }
+  .download-choice { width: 100%; }
   .download-card { padding: 22px; }
   .wake-hero { padding: 36px 0; }
   .wake-lockup { gap: 8px; }
